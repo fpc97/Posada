@@ -32,15 +32,9 @@ class Portada extends React.Component {
         });
     }
 
-    vhSet() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        this.scrollShrink.bind(this);
-    }
-
     componentDidMount() {
         window.addEventListener('scroll', this.scrollShrink.bind(this));
-        window.addEventListener('resize', this.vhSet.bind(this));
+        window.addEventListener('resize', this.scrollShrink.bind(this));
     }
 
     render() {
