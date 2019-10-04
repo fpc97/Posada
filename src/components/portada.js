@@ -44,6 +44,7 @@ class Portada extends React.Component {
                         <hgroup>
                             <h1><span className={stylePortada.link}>Mi Morada</span><br></br>BnB</h1>
                             <span>Bed and Breakfast</span>
+                            <h2>LA ALTURA ES {window.innerHeight}</h2>
                         </hgroup>
                         <nav>
                             <ul>
