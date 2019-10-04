@@ -34,10 +34,10 @@ class Portada extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.scrollShrink.bind(this));
+        window.addEventListener('resize', this.scrollShrink.bind(this));
     }
 
     render() {
-        const guindo = window.innerHeight;
         return (
             <header style={this.state.styleHeader}>
                 <div className={stylePortada.wrapper}>
@@ -45,7 +45,6 @@ class Portada extends React.Component {
                         <hgroup>
                             <h1><span className={stylePortada.link}>Mi Morada</span><br></br>BnB</h1>
                             <span>Bed and Breakfast</span>
-                            <h2>LA ALTURA ES {guindo}</h2>
                         </hgroup>
                         <nav>
                             <ul>
