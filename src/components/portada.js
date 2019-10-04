@@ -8,7 +8,7 @@ class Portada extends React.Component {
         styleHeader: {
             position: 'fixed',
             width: '100%',
-            height: '100vh',
+            height: 'calc(var(--vh, 1vh) * 100)',
             padding: 'calc((1rem + 1vw) * 1)',
             transitionProperty: 'padding-left, padding-right',
             transitionDuration: '.6s',
@@ -32,9 +32,15 @@ class Portada extends React.Component {
         });
     }
 
+    vhSet() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        this.scrollShrink.bind(this);
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.scrollShrink.bind(this));
-        window.addEventListener('resize', this.scrollShrink.bind(this));
+        window.addEventListener('resize', this.vhSet.bind(this));
     }
 
     render() {
