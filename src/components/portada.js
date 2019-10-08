@@ -82,6 +82,14 @@ class Portada extends React.Component {
         }
     }
 
+    items = [
+        'La Posada',
+        'Ubicación',
+        'Tarifas',
+        'Actividades',
+        'Contacto'
+    ]
+
     componentDidMount() {
         setTimeout(() => {
             window.addEventListener('scroll', this.checkBarra.bind(this));
@@ -94,26 +102,21 @@ class Portada extends React.Component {
 
     render() {
         const generateHgroup = () => {
-            const titulo = <h1 className={this.state.modoBarra ? stylePortada.h1Barra : stylePortada.h1}><span className={this.state.modoBarra ? stylePortada.tituloPrimeroBarra : stylePortada.tituloPrimero}>Mi Morada</span><br></br><span className={this.state.modoBarra ? stylePortada.tituloSegundoBarra : stylePortada.tituloSegundo}>B&B</span></h1>,
-                slogan = <span className={this.state.modoBarra ? stylePortada.sloganBarra : stylePortada.slogan}>Bed and Breakfast</span>,
-                hgroup = <hgroup className='oslo'>{titulo}{slogan}</hgroup>,
+            const hgroup = (
+                <hgroup>
+                    <h1 className={this.state.modoBarra ? stylePortada.h1Barra : stylePortada.h1}><span className={this.state.modoBarra ? stylePortada.tituloPrimeroBarra : stylePortada.tituloPrimero}>Mi Morada</span><br></br><span className={this.state.modoBarra ? stylePortada.tituloSegundoBarra : stylePortada.tituloSegundo}>B&B</span></h1>
+                    <span className={this.state.modoBarra ? stylePortada.sloganBarra : stylePortada.slogan}>Bed and Breakfast</span>
+                </hgroup>
+            ),
                 hgroupLink = <Link to='#home'>{hgroup}</Link>;
 
             return this.state.modoBarra ? hgroupLink : hgroup;
         };
 
-        const items = [
-            'La Posada',
-            'Ubicación',
-            'Tarifas',
-            'Actividades',
-            'Contacto'
-        ];
-
         const itemList = (
             <nav className={this.state.modoBarra ? stylePortada.navBarra : stylePortada.nav}>
                 <ul>
-                    {items.map(item => <li className={this.state.modoBarra ? stylePortada.liBarra : stylePortada.li}><Link className={this.state.modoBarra ? stylePortada.linkBarra : stylePortada.link} to={generateId(item)}>{item}</Link></li>)}
+                    {this.items.map(item => <li className={this.state.modoBarra ? stylePortada.liBarra : stylePortada.li}><Link className={this.state.modoBarra ? stylePortada.linkBarra : stylePortada.link} to={generateId(item)}>{item}</Link></li>)}
                 </ul>
             </nav>
         );
@@ -129,7 +132,7 @@ class Portada extends React.Component {
                         </div>
                         <div className={this.state.modoBarra ? stylePortada.indiceBarra : stylePortada.indice}>
                             <svg className={this.state.modoBarra ? stylePortada.cruzBarra : stylePortada.cruz} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7"><polyline points="0.4 11.3 5.9 5.8 0.6 0.6"/><polyline points="11.3 0.4 5.8 5.9 11.1 11.1"/></svg>
-                            {/*{this.state.anchoPantalla > 700 || !this.state.modoBarra ? itemList : <Burger>{items}</Burger>}*/}
+                            {this.state.anchoPantalla > 700 || !this.state.modoBarra ? itemList : <Burger>{items}</Burger>}
                             <svg className={this.state.modoBarra ? stylePortada.cruzBarra : stylePortada.cruz} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7"><polyline points="0.4 11.3 5.9 5.8 0.6 0.6"/><polyline points="11.3 0.4 5.8 5.9 11.1 11.1"/></svg>
                         </div>
                     </div>
