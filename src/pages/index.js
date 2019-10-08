@@ -8,7 +8,6 @@ import '../styles/base.scss';
 import Portada from '../components/portada';
 
 const Index = () => {
-
     return (
         <div>
             <Portada/>
