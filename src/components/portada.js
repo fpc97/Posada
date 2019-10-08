@@ -92,7 +92,7 @@ class Portada extends React.Component {
         });
     }
 
-    render() {/*
+    render() {
         const generateHgroup = () => {
             const titulo = <h1 className={this.state.modoBarra ? stylePortada.h1Barra : stylePortada.h1}><span className={this.state.modoBarra ? stylePortada.tituloPrimeroBarra : stylePortada.tituloPrimero}>Mi Morada</span><br></br><span className={this.state.modoBarra ? stylePortada.tituloSegundoBarra : stylePortada.tituloSegundo}>B&B</span></h1>,
                 slogan = <span className={this.state.modoBarra ? stylePortada.sloganBarra : stylePortada.slogan}>Bed and Breakfast</span>,
@@ -116,7 +116,7 @@ class Portada extends React.Component {
                     {items.map(item => <li className={this.state.modoBarra ? stylePortada.liBarra : stylePortada.li}><Link className={this.state.modoBarra ? stylePortada.linkBarra : stylePortada.link} to={generateId(item)}>{item}</Link></li>)}
                 </ul>
             </nav>
-        );*/
+        );
 
         return (
             <header className={this.state.modoBarra ? stylePortada.headerBarra : stylePortada.header} style={this.state.styleHeader}>
@@ -124,7 +124,7 @@ class Portada extends React.Component {
                     <div className={this.state.modoBarra ? stylePortada.centroBarra : stylePortada.centro} style={{opacity: this.state.opc, height: this.state.modoBarra ? this.state.alturaCalculada : 'auto'}}>
                         <div className={this.state.modoBarra ? stylePortada.bannerBarra : stylePortada.banner}>
                             <svg className={this.state.modoBarra ? stylePortada.semicirculoBarra : stylePortada.semicirculo} data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142.8 35.9"><defs></defs><circle class="cls-1" cx="71.4" cy="1.7" r="1.7"/><circle class="cls-1" cx="55.6" cy="3.1" r="1.7"/><circle class="cls-1" cx="40.3" cy="7.2" r="1.7"/><circle class="cls-1" cx="25.9" cy="13.9" r="1.7"/><circle class="cls-1" cx="12.9" cy="23" r="1.7"/><circle class="cls-1" cx="1.7" cy="34.2" r="1.7"/><circle class="cls-1" cx="141.1" cy="34.2" r="1.7"/><circle class="cls-1" cx="129.9" cy="23" r="1.7"/><circle class="cls-1" cx="116.9" cy="13.9" r="1.7"/><circle class="cls-1" cx="102.5" cy="7.2" r="1.7"/><circle class="cls-1" cx="87.2" cy="3.1" r="1.7"/></svg>
-                            {/* generateHgroup() */}
+                            { generateHgroup() }
                             <svg className={this.state.modoBarra ? stylePortada.semicirculoBarra : stylePortada.semicirculo} id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142.81 35.89"><circle cx="71.41" cy="34.2" r="1.69"/><circle cx="87.21" cy="32.82" r="1.69"/><circle cx="102.53" cy="28.71" r="1.69"/><circle cx="116.91" cy="22.01" r="1.69"/><circle cx="129.91" cy="12.91" r="1.69"/><circle cx="141.12" cy="1.69" r="1.69"/><circle cx="1.69" cy="1.69" r="1.69"/><circle cx="12.91" cy="12.91" r="1.69"/><circle cx="25.9" cy="22.01" r="1.69"/><circle cx="40.28" cy="28.71" r="1.69"/><circle cx="55.6" cy="32.82" r="1.69"/></svg>
                         </div>
                         <div className={this.state.modoBarra ? stylePortada.indiceBarra : stylePortada.indice}>
