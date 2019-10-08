@@ -33,7 +33,7 @@ class Portada extends React.Component {
         opc: 1,
         anchoPantalla: 0
     }
-    
+    /*
     checkBarra() {
         const alturaCalculada = Math.max(50, this.state.alturaBarra * (window.innerHeight / 969)),
             breakPoint = window.innerHeight - alturaCalculada;
@@ -87,7 +87,7 @@ class Portada extends React.Component {
             anchoPantalla: window.innerWidth
         });
     }
-
+*/
     render() {
         const generateHgroup = () => {
             const titulo = <h1 className={this.state.modoBarra ? stylePortada.h1Barra : stylePortada.h1}><span className={this.state.modoBarra ? stylePortada.tituloPrimeroBarra : stylePortada.tituloPrimero}>Mi Morada</span><br></br><span className={this.state.modoBarra ? stylePortada.tituloSegundoBarra : stylePortada.tituloSegundo}>B&B</span></h1>,
