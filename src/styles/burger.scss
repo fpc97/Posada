@@ -1,0 +1,70 @@
+.burger{
+    position: relative;
+
+    animation-name: label-entrance;
+    animation-duration: 1s;
+    animation-delay: .8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    &__label{
+        width: 1rem;
+        height: 1rem;
+        background-color: #f0f;
+        display: inline-block;
+
+        &::selection{
+            background-color: transparent;
+        }
+    }
+    &__check{
+        display: none;
+    }
+    &__nav{
+        display: none;
+        input:checked ~ &{
+            background-color: hsla(38, 67%, 70%, .6);
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: -10;
+            width: 48vw;
+            padding: 6rem 0 4rem;
+        }
+    }
+    &__ul{
+
+    }
+    &__li{
+        list-style: none;
+        margin: calc(1rem + 2vh);
+    }
+    &__link{
+        font-family: "Open sans", sans-serif;
+        font-size: calc(1.4rem + .6vh + .4vw);
+        font-style: italic;
+        font-weight: bold;
+
+        &,
+        &:link,
+        &:visited{
+            color: rgba(0,0,0,.5);
+        }
+
+        &:active{
+            background-color: #f00;
+        }
+    }
+}
+
+@keyframes label-entrance{
+    0%{
+        opacity: 0;
+        transform: translateY(-.4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
