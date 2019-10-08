@@ -40,9 +40,10 @@ class Portada extends React.Component {
             
         const l = Math.min(window.pageYOffset / window.innerHeight, 1),
             lExp = Math.pow(l, 1.8);
+            /*
         const c0 = [29, 70, 45],
             c1 = [38, 67, 70],
-            cR = [c0[0]*(1-lExp)+c1[0]*lExp, c0[1]*(1-lExp)+c1[1]*lExp, c0[2]*(1-lExp)+c1[2]*lExp];
+            cR = [c0[0]*(1-lExp)+c1[0]*lExp, c0[1]*(1-lExp)+c1[1]*lExp, c0[2]*(1-lExp)+c1[2]*lExp];*/
 
         if (window.pageYOffset > breakPoint) {  // Barra
             this.setState(prevState => {
@@ -52,9 +53,10 @@ class Portada extends React.Component {
                 styleHeader.top = -breakPoint;
                 styleHeader.transitionDuration = '0';
 
-                return {styleHeader,
+                return {
+                    styleHeader,
                     modoBarra: true,
-                    bcg: `hsl(${cR[0]}, ${cR[1]}%, ${cR[2]}%)`,
+                    //bcg: `hsl(${cR[0]}, ${cR[1]}%, ${cR[2]}%)`,
                     opc: 1,
                     alturaCalculada: alturaCalculada,
                     anchoPantalla: window.innerWidth
@@ -68,9 +70,10 @@ class Portada extends React.Component {
                 styleHeader.top = Math.max(-window.pageYOffset, -breakPoint);
                 styleHeader.transitionDuration = '0';
                 
-                return {styleHeader,
+                return {
+                    styleHeader,
                     modoBarra: false,
-                    bcg: `hsl(${cR[0]}, ${cR[1]}%, ${cR[2]}%)`,
+                    //bcg: `hsl(${cR[0]}, ${cR[1]}%, ${cR[2]}%)`,
                     opc: 1 - lExp * 1.4,
                     anchoPantalla: window.innerWidth
                 };
