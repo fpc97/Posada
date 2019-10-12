@@ -1,0 +1,108 @@
+// Seccion intro
+.container{
+    padding-top: 5rem;
+    @media(min-width: 800px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+    }
+}
+
+.direccion{
+    margin: 6rem 0 2rem;
+
+    @media (min-width: 800px) {
+        margin: 6rem 0 2rem auto;
+    }
+
+    & > span{
+        color: #4D4D4D;
+        font-weight: 700;
+        line-height: 2.6rem;
+        font-size: 1.6rem;
+    }
+}
+
+// Los tres containers
+.listaContainer{
+    @media (min-width: 800px) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+}
+
+.introContainer{
+    @media (min-width: 800px) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
+
+.mapaContainer{
+    position: relative;
+    height: 100%;
+    padding: 0;
+    @media (min-width: 800px) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+}
+
+// Seccion mapa
+.mapa{
+    height: 30rem;
+    padding: 0;
+    @media(min-width: 800px) {
+        position: absolute;
+        height: 80vh;
+    }
+}
+
+// Seccion lista
+.lista{
+
+}
+
+.listaIntro{
+
+}
+
+.listaUl{
+    list-style: none;
+
+    & > li{
+        margin: 1rem 0;
+        text-align: end;
+    }
+}
+
+.listaLi{
+    // No lo estamos usando
+}
+
+.listaLink{
+    display: inline-block;
+    font-weight: bold;
+    line-height: 2.2rem;
+
+    &,
+    &:link,
+    &:visited{
+        color: #AD5B04;
+    }
+
+    & > span{
+        line-height: 2.2rem;
+        font-weight: normal;
+        color: #AD5B04;
+
+        &:before{
+            content: "\A";
+            white-space: pre;
+
+            @media (min-width: 800px) {
+                content: "- ";
+            }
+        }
+    }
+}
