@@ -1,0 +1,253 @@
+$margen-medida: 2rem;
+$margen-medida-chico: 1rem;
+
+.header{
+    position: relative;
+    z-index: 900000000;
+    width: 100%;
+    height: 100vh;
+    padding-bottom: $margen-medida;
+    min-height: 400px;
+    @media(max-width: 1280px){
+        padding-bottom: $margen-medida-chico;
+    }
+    @media(min-width: 400px){
+        min-height: 700px;
+    }
+}
+
+.blanco{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: $margen-medida $margen-medida 0;
+    @media(max-width: 1280px){
+        padding: $margen-medida-chico $margen-medida-chico 0;
+    }
+    background-color: white;
+}
+
+.fondo{
+    position: relative;
+    background-color: rgb(230, 166, 69);
+    height: 100%;
+    overflow: hidden;
+/*
+    &::after{
+        content: ' ';
+        display: inline-block;
+        background-color: white;
+        width: 100%;
+        height: $margen-medida;
+        transform: translateY(-100%);
+    }*/
+}
+
+.center{
+    //background-color: #f00;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    @media (max-width: 400px) {
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+}
+
+.banner{
+    position: relative;
+    padding: 3rem 0;
+}
+
+.index{
+    
+    @media (min-width: 400px) {
+        margin-top: 5vh;
+    }
+}
+
+/* SECCION BANNER */
+.semicirculo{
+    //display: none;
+    display: block;
+    margin: $margen-medida auto;
+    @media(max-width: 1280px){
+        margin: $margen-medida-chico auto;
+    }
+    max-width: 17vh;
+    @media(max-width: 400px){
+        max-width: 12vh;
+        display: none;
+    }
+    fill: #2b2b2b;
+    align-content: center;
+}
+
+.hgroup{
+    text-align: center;
+}
+
+.h1{
+    font-family: 'Lora', serif;
+    color: #2B2B2B;
+    text-shadow: 2px 2px 0 white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.titulo1{
+    font-size: 5rem;
+    font-style: italic;
+
+    @media(max-width: 400px) {
+        font-size: 3rem;
+    }
+}
+
+.titulo2{
+    font-size: 7rem;
+
+    @media(max-width: 400px) {
+        font-size: 4.4rem;
+    }
+}
+
+.slogan{
+    color: white;
+    font-family: 'Merriweather', serif;
+    font-size: 2.7rem;
+    font-style: italic;
+    font-weight: bold;
+
+    @media(max-width: 400px) {
+        font-size: 1.8rem;
+    }
+}
+
+// Linea medio
+.lineaMedio{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: inline-block;
+    width: 90vw;
+    transform: translateX(-50%);
+    @media(max-width: 400px) {
+        display: none;
+    }
+}
+
+.mitad1{
+    display: inline-block;
+    border-bottom: 2px solid hsla(0, 0%, 17%, .75);
+    width: 45%;
+}
+.mitad2{
+    display: inline-block;
+    //position: absolute;
+    //transform: translateX(100%);
+    //right: 0;
+    border-bottom: 2px solid hsla(0, 0%, 17%, .75);
+    width: 45%;
+    //float: right;
+    margin-left: 10%;
+}
+.circuloMedio{
+    display: inline-block;
+    height: .5rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 50%;
+    border-radius: 50%;
+}
+
+/* SECCION INDEX */
+.iconoIndex{
+    display: none;
+    fill: none;
+    stroke:rgba(65, 43, 16, 0.507);
+    stroke-width: 1px;
+    max-width: 2vh;
+}
+
+.nav{
+    margin-top: 10vh;
+}
+
+.ul{
+    //background-color: #f00;
+}
+
+.li{
+    list-style: none;
+    //margin: 4rem 0;
+    margin: 4vh 0;
+    @media(max-width: 400px){
+        text-align: center;
+        margin: 3rem 0;
+    }
+
+    &:nth-child(2){
+        @media(min-width: 400px){
+            margin-left: 4rem;
+        }
+        margin-top: 0;
+    }
+    &:nth-child(3){
+        @media(min-width: 400px){
+            margin-left: 8rem
+        }
+    }
+    &:nth-child(4){
+        @media(min-width: 400px){
+            margin-left: 12rem
+        }
+    }
+    &:nth-child(5){
+        @media(min-width: 400px){
+            margin-left: 16rem;
+        }
+        margin-bottom: 0;
+    }
+}
+
+.link{
+    position: relative;
+    font-family: 'Open sans', sans-serif;
+    font-size: 2.6rem;
+    font-style: italic;
+    font-weight: bold;
+    @media(max-width: 400px){
+        font-size: 1.6rem;
+    }
+
+    &,
+    &:link,
+    &:visited{
+        color: white;
+        text-shadow: 2px 2px 2px rgba(43, 43, 43, 0.377);
+    }
+
+    
+    &::after{
+        content: '';
+        //background-color: rgba(255, 0, 0, .4);
+        height: 100%;
+        width: 0;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        transition-property: width;
+        transition-duration: .3s;
+        border-bottom: 3px solid #fff;
+        box-shadow: 0 3px 3px -2px rgba(43, 43, 43, 0.3);
+    }
+
+    &:hover{
+        &:after{
+            width: 100%;
+        }
+    }
+}

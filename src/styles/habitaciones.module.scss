@@ -1,0 +1,120 @@
+.fondo{
+    background-color: #F1F1E4;
+    margin-top: 5rem;
+}
+
+.container{
+
+    @media (min-width: 800px){
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        padding: 10rem 0;
+    }
+}
+
+// Seleccion
+.seccionHabitaciones{
+    margin-left: 0;
+    @media (min-width: 800px){
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: 0;
+        width: 40rem;
+    }
+}
+
+.ulHabitaciones{
+    padding: 4rem 0;
+    border-bottom: 1px solid #B7B4A6;
+    @media (min-width: 800px){
+        padding-top: 6rem;
+        grid-column: 2;
+        border-bottom: none;
+    }
+}
+.liHabitaciones{
+    list-style: none;
+    margin-bottom: 2rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.seleccion{
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    opacity: .55;
+    color: #1C1100;
+    transition-property: padding-left, opacity;
+    transition-duration: .4s;
+    &:hover{
+        opacity: .8;
+    }
+    @media (min-width: 800px){
+        font-size: 2.2rem;
+    }
+
+    &Active{
+        font-family: 'Open sans', sans-serif;
+        font-size: 1.6rem;
+        font-weight: bold;
+        opacity: 1;
+        color: #1C1100;
+        //font-style: italic;
+        transition-property: padding-left;
+        transition-duration: .4s;
+        @media (min-width: 800px){
+            font-size: 2.2rem;
+            padding-left: 2.4rem;
+        }
+    }
+}
+
+
+// Muestra
+.seccionMuestra{
+    padding: 3rem 2rem;
+    @media (min-width: 800px){
+        padding: 0;
+        grid-column: 2;
+    }
+}
+
+.muestraInterno{
+    @media (min-width: 800px){
+        padding: 2rem 0 2rem 7rem;
+        border-left: 1px solid #B7B4A6;
+    }
+}
+
+.h4{
+    font-family: 'Lora', serif;
+    font-size: 2.1rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    @media (min-width: 800px){
+        font-size: 3.6rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.descripcionContenido{
+    max-width: 54rem;
+}
+
+.descripcionParrafo{
+    margin-top: 1rem;
+    line-height: 2.8rem;
+}
+
+.descripcionUl{
+    margin-top: 1.6rem;
+}
+
+.descripcionItem{
+    list-style: none inside;
+    &:before{
+        content: '- ';
+    }
+}

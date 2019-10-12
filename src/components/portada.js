@@ -1,18 +1,77 @@
 import React from 'react';
-import {Link} from 'gatsby';
 
 // Estilos
-import stylePortada from '../styles/portada.module.scss';
+import styleHome from '../styles/home.module.scss';
 
 // Componentes
-import Burger from './portada-burger';
+//import Burger from './portada-burger';
+import BarraTop from './barra-top';
 
 // Utilidades
 import generateId from '../lib/generateId.js';
 
 // Cosas...
+class Portada extends React.Component {
+    state = {
+        
+        items: [
+            'La Posada',
+            'Ubicación',
+            'Tarifas',
+            'Actividades',
+            'Contacto'
+        ]
+    }
 
+    render() {
+        const generateHgroup = () => {
+            const hgroup = (
+                <hgroup className={styleHome.hgroup}>
+                    <h1 className={styleHome.h1}><span className={styleHome.titulo1}>Mi Morada</span><br></br><span className={styleHome.titulo2}>B&B</span></h1>
+                    <span className={styleHome.slogan}>Bed and Breakfast</span>
+                </hgroup>
+            ), hgroupLink = <a href='#home'>{hgroup}</a>;
 
+            return this.state.modoBarra ? hgroupLink : hgroup;
+        };
+
+        const itemList = (
+            <nav className={styleHome.nav}>
+                <ul className={styleHome.ul}>
+                    {this.state.items.map(item => <li className={styleHome.li}><a className={styleHome.link} href={generateId(item)}>{item}</a></li>)}
+                </ul>
+            </nav>
+        );
+        return (
+            <header className={styleHome.header}>
+                <div className={styleHome.blanco}>
+                    <div className={styleHome.fondo}>
+                        <div className={styleHome.center}>
+                            <div className={styleHome.banner}>
+                                <svg className={styleHome.semicirculo} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142.8 35.9"><circle class="cls-1" cx="71.4" cy="1.7" r="1.7"/><circle class="cls-1" cx="55.6" cy="3.1" r="1.7"/><circle class="cls-1" cx="40.3" cy="7.2" r="1.7"/><circle class="cls-1" cx="25.9" cy="13.9" r="1.7"/><circle class="cls-1" cx="12.9" cy="23" r="1.7"/><circle class="cls-1" cx="1.7" cy="34.2" r="1.7"/><circle class="cls-1" cx="141.1" cy="34.2" r="1.7"/><circle class="cls-1" cx="129.9" cy="23" r="1.7"/><circle class="cls-1" cx="116.9" cy="13.9" r="1.7"/><circle class="cls-1" cx="102.5" cy="7.2" r="1.7"/><circle class="cls-1" cx="87.2" cy="3.1" r="1.7"/></svg>
+                                { generateHgroup() }
+                                <svg className={styleHome.semicirculo} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142.81 35.89"><circle cx="71.41" cy="34.2" r="1.69"/><circle cx="87.21" cy="32.82" r="1.69"/><circle cx="102.53" cy="28.71" r="1.69"/><circle cx="116.91" cy="22.01" r="1.69"/><circle cx="129.91" cy="12.91" r="1.69"/><circle cx="141.12" cy="1.69" r="1.69"/><circle cx="1.69" cy="1.69" r="1.69"/><circle cx="12.91" cy="12.91" r="1.69"/><circle cx="25.9" cy="22.01" r="1.69"/><circle cx="40.28" cy="28.71" r="1.69"/><circle cx="55.6" cy="32.82" r="1.69"/></svg>
+                                <div className={styleHome.lineaMedio}>
+                                    <span className={styleHome.mitad1}></span>
+                                    <svg className={styleHome.circuloMedio} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3.4 3.4"><circle class="cls-1" cx="1.7" cy="1.7" r="1.7"/></svg>
+                                    <span className={styleHome.mitad2}></span>
+                                </div>
+                            </div>
+                            <div className={styleHome.index}>
+                                <svg className={styleHome.iconoIndex} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7"><polyline points="0.4 11.3 5.9 5.8 0.6 0.6"/><polyline points="11.3 0.4 5.8 5.9 11.1 11.1"/></svg>
+                                {itemList}
+                                <svg className={styleHome.iconoIndex} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7"><polyline points="0.4 11.3 5.9 5.8 0.6 0.6"/><polyline points="11.3 0.4 5.8 5.9 11.1 11.1"/></svg>
+                            </div>
+                        </div>
+                        <BarraTop/>
+                    </div>
+                </div>
+            </header>
+        );
+    }
+};
+
+/*
 class Portada extends React.Component {
     state = {
         modoBarra: false,
@@ -141,7 +200,7 @@ class Portada extends React.Component {
         );
     }
 };
-
+*/
 export default Portada;
 
 
