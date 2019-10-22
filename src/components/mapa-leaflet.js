@@ -125,7 +125,7 @@ class Mapa extends React.Component {
 
     componentWillReceiveProps(newProps) {
         if (typeof this.map !== undefined) {
-            console.log(newProps.destino);
+            //console.log(newProps.destino);
             newProps.destino===null||this.establecerRuta(newProps.destino);
         }
     }

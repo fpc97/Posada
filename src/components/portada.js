@@ -9,6 +9,7 @@ import BarraTop from './barra-top';
 
 // Utilidades
 import generateId from '../lib/generateId.js';
+import smoothScroll from '../lib/smooth-scroll.js';
 
 // Cosas...
 class Portada extends React.Component {
@@ -38,11 +39,7 @@ class Portada extends React.Component {
         const itemList = (
             <nav className={styleHome.nav}>
                 <ul className={styleHome.ul}>
-                    {this.state.items.map(item => <li className={styleHome.li}><a className={styleHome.link} href={generateId(item)} onClick={function(e) {
-                        e.preventDefault();
-                        const targ = document.getElementById(e.target.href.split('#')[1]);
-                        !targ||window.scrollBy({top: targ.getBoundingClientRect().top, left: 0, behavior: 'smooth'});
-                    }}>{item}</a></li>)}
+                    {this.state.items.map(item => <li className={styleHome.li}><a className={styleHome.link} href={generateId(item)} onClick={smoothScroll}>{item}</a></li>)}
                 </ul>
             </nav>
         );
@@ -67,7 +64,7 @@ class Portada extends React.Component {
                                 <svg className={styleHome.iconoIndex} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.7 11.7"><polyline points="0.4 11.3 5.9 5.8 0.6 0.6"/><polyline points="11.3 0.4 5.8 5.9 11.1 11.1"/></svg>
                             </div>
                         </div>
-                        <BarraTop/>
+                        <BarraTop secciones={this.state.items}/>
                     </div>
                 </div>
             </header>

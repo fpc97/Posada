@@ -5,7 +5,7 @@ import contactoStyle from '../styles/contacto.module.scss';
 
 const Contacto = () => {
     return (
-        <footer className={contactoStyle.footer}>
+        <footer className={contactoStyle.footer} id='contacto'>
             <div className={contactoStyle.color}>
                 <h2 className={contactoStyle.titulo}>Contacto</h2>
                 <div className={contactoStyle.wrapperContenido}>

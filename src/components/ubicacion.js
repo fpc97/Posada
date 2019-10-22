@@ -78,6 +78,7 @@ class Ubicacion extends React.Component {
 
     componentDidMount() {
         this.checkMovil();
+        this.resizeMap();
         this.mapaPosicion();
         window.addEventListener('scroll', this.mapaPosicion);
 
@@ -104,7 +105,7 @@ class Ubicacion extends React.Component {
         const generarDestinos = () => this.state.destinos.map((dest, ind) => <li><a className={ubicacionStyle.listaLink} onClick={() => this.manageDestClick(ind)} href='javascript:void(0)'><span>{dest[1]}</span> {dest[0]}</a></li>);
 
         return (
-            <div className={`container-general ${ubicacionStyle.container}`}>
+            <div className={`container-general ${ubicacionStyle.container}`} id='ubicacin'>
                 <div className={ubicacionStyle.introContainer}>
                     <div className={`titulo-wrap container-parrafo c-der`}>
                         <h2>Ubicación</h2>
