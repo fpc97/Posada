@@ -22,6 +22,7 @@ const Index = () => {
                 <Habitaciones/>
                 <Ubicacion/>
             </main>
+            <Contacto/>
         </div>
     )
 }

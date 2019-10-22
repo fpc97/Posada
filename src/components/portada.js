@@ -38,12 +38,16 @@ class Portada extends React.Component {
         const itemList = (
             <nav className={styleHome.nav}>
                 <ul className={styleHome.ul}>
-                    {this.state.items.map(item => <li className={styleHome.li}><a className={styleHome.link} href={generateId(item)}>{item}</a></li>)}
+                    {this.state.items.map(item => <li className={styleHome.li}><a className={styleHome.link} href={generateId(item)} onClick={function(e) {
+                        e.preventDefault();
+                        const targ = document.getElementById(e.target.href.split('#')[1]);
+                        !targ||window.scrollBy({top: targ.getBoundingClientRect().top, left: 0, behavior: 'smooth'});
+                    }}>{item}</a></li>)}
                 </ul>
             </nav>
         );
         return (
-            <header className={styleHome.header}>
+            <header id='portada' className={styleHome.header}>
                 <div className={styleHome.blanco}>
                     <div className={styleHome.fondo}>
                         <div className={styleHome.center}>

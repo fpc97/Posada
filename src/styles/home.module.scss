@@ -57,7 +57,9 @@ $margen-medida-chico: 1rem;
 
 .banner{
     position: relative;
-    padding: 3rem 0;
+    @media(min-width: 400px) {
+        padding: 3rem 0;
+    }
 }
 
 .index{
@@ -94,6 +96,11 @@ $margen-medida-chico: 1rem;
     text-shadow: 2px 2px 0 white;
     font-weight: bold;
     white-space: nowrap;
+    line-height: 6rem;
+
+    @media(max-width: 400px) {
+        line-height: calc(2rem + 4vh);
+    }
 }
 
 .titulo1{
@@ -110,6 +117,7 @@ $margen-medida-chico: 1rem;
 
     @media(max-width: 400px) {
         font-size: 4.4rem;
+        line-height: 2rem;
     }
 }
 
@@ -173,7 +181,10 @@ $margen-medida-chico: 1rem;
 }
 
 .nav{
-    margin-top: 10vh;
+    //margin-top: 4vh;
+    @media (min-width: 400px) {
+        margin-top: 10vh;
+    }
 }
 
 .ul{
@@ -182,11 +193,10 @@ $margen-medida-chico: 1rem;
 
 .li{
     list-style: none;
-    //margin: 4rem 0;
     margin: 4vh 0;
     @media(max-width: 400px){
         text-align: center;
-        margin: 3rem 0;
+        margin: 2vh 0;
     }
 
     &:nth-child(2){
